@@ -1,25 +1,44 @@
 # ehi-i18n
 
 #### 介绍
-{**以下是码云平台说明，您可以替换此简介**
-码云是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+一个简单的I18n组件,足够完成日常使用的国际化功能,比较适合没有引入jQuery,vue等组件的项目
 
 #### 软件架构
-软件架构说明
+原生JS
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+下载 ehi-i18n.js
+建立 xx.json 的语言包 xx与语言名称一致
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+
+```
+ <div>
+        <h1 i18n="[html,attr.title]welcomeLogin" title=""></h1>
+        <input type="text" i18n='[value]nameTips'> <br>
+        <input type="text"  i18n='[value]pwdTips'> <br>
+        <input type="checkbox"  i18n='[value]rememberPassword'> <br>
+        <button i18n='login'></button>
+    </div>
+    <script src="./ehi-i18n.js"></script>
+    <script>
+        let i18n = new EhiI18n('./lan/',()=>{
+            //获取当前语言
+            console.log(`当前语言${i18n.getLanguage()}`)
+            //从语言中获取值,可在Js获取的时候使用
+            console.log(i18n.get('login'))
+        });
+        //切换语言,可以无刷新切换语言,callback会被触发执行
+        //i18n.setLanguage('us')
+        //重新加载当前语言,会触发callback
+        //i18n.loadLanguage()
+
+    </script>
+```
+
 
 #### 参与贡献
 
@@ -29,11 +48,3 @@
 4.  新建 Pull Request
 
 
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
