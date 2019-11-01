@@ -62,15 +62,15 @@ class EhiI18n {
             for (let j = 0; j < types.length; j++) {
                 let type = types[j]
                 let attr = ''
-                if (typeof type === 'object') {
-                    type = type['type']
-                    attr = type['attr']
+                if (typeof types[j] === 'object') {
+                    type = types[j]['type']
+                    attr = types[j]['attr']
                 }
                 if ('html' === type) {
                     dom.innerHTML = text
                 } else if (type === 'value') {
                     dom.value = text
-                } else if (type === 'pla') {
+                } else if (type === 'placeholder') {
                     dom.setAttribute('placeholder', text)
                 } else if (type === 'attr') {
                     dom.setAttribute(attr, text)
