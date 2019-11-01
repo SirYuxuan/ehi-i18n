@@ -15,7 +15,7 @@
 #### 使用说明
 
 
-```
+```javascript
  <div>
         <h1 i18n="[html,attr.title]welcomeLogin" title=""></h1>
         <input type="text" i18n='[value]nameTips'> <br>
