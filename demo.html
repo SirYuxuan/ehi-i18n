@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 i18n="[html,attr.title]welcomeLogin" title=""></h1>
+        <input type="text" i18n='[value]nameTips'> <br>
+        <input type="text"  i18n='[value]pwdTips'> <br>
+        <input type="checkbox"  i18n='[value]rememberPassword'> <br>
+        <button i18n='login'></button>
+    </div>
+    <script src="./ehi-i18n.js"></script>
+    <script>
+        let i18n = new EhiI18n('./lan/',()=>{
+            //获取当前语言
+            console.log(`当前语言${i18n.getLanguage()}`)
+            //从语言中获取值,可在Js获取的时候使用
+            console.log(i18n.get('login'))
+        });
+        //切换语言,可以无刷新切换语言,callback会被触发执行
+        //i18n.setLanguage('us')
+        //重新加载当前语言,会触发callback
+        //i18n.loadLanguage()
+
+    </script>
+</body>
+</html>
